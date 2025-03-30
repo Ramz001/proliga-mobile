@@ -2,11 +2,8 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 import { YStack } from 'tamagui';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
+import { Home, ArrowLeftRight, BarChart3 } from 'lucide-react-native';
+import { colors } from '@/constants/colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
 export default function TabLayout() {
@@ -15,10 +12,8 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
             // Use a transparent background on iOS to show the blur effect
@@ -33,7 +28,29 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color }) => (
             <YStack>
-              <IconSymbol size={28} name="house.fill" color={color} />
+              <Home size={24} color={color} />
+            </YStack>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="transfers"
+        options={{
+          title: 'Transfers',
+          tabBarIcon: ({ color }) => (
+            <YStack>
+              <ArrowLeftRight size={24} color={color} />
+            </YStack>
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="stats"
+        options={{
+          title: 'Stats',
+          tabBarIcon: ({ color }) => (
+            <YStack>
+              <BarChart3 size={24} color={color} />
             </YStack>
           ),
         }}

@@ -14,7 +14,8 @@ import {
 } from "@react-navigation/native";
 import { useColorScheme } from "react-native";
 import "./global.css";
-
+import { Provider } from "react-redux";
+import store from "../lib/store.global";
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
@@ -35,14 +36,18 @@ export default function RootLayout() {
   }
 
   return (
-    <TamaguiProvider config={config}>
-      <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Proliga" />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
-      </ThemeProvider>
-    </TamaguiProvider>
+    <Provider store={store}>
+      <TamaguiProvider config={config}>
+        <ThemeProvider
+          value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+        >
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Proliga" />
+            <Stack.Screen name="+not-found" />
+          </Stack>
+          <StatusBar style="auto" />
+        </ThemeProvider>
+      </TamaguiProvider>
+    </Provider>
   );
 }
