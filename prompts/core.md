@@ -8,7 +8,6 @@ UI & Styling:
 💎 Tamagui (UI framework for Expo/React Native)
 📱 Reanimated (react-native-reanimated)
 🎨 NativeWind (nativewind)
-🎨 Lucide React Native (lucide-react-native)
 🎨 Tanstack Table (tanstack-table-react)
 
 Forms & Date Handling:

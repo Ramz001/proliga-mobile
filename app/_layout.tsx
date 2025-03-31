@@ -16,13 +16,15 @@ import { useColorScheme } from "react-native";
 import "./global.css";
 import { Provider } from "react-redux";
 import store from "../lib/store.global";
-// Prevent the splash screen from auto-hiding before asset loading is complete.
+
+// Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require("../assets/fonts/SpaceMono-Regular.ttf"),
+    Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
+    InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
   });
 
   useEffect(() => {
@@ -37,13 +39,13 @@ export default function RootLayout() {
 
   return (
     <Provider store={store}>
-      <TamaguiProvider config={config}>
+      <TamaguiProvider config={config} defaultTheme={colorScheme!}>
         <ThemeProvider
           value={colorScheme === "dark" ? DarkTheme : DefaultTheme}
         >
           <Stack screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="Proliga" />
-            <Stack.Screen name="+not-found" />
+            <Stack.Screen name="(home)" />
+            <Stack.Screen name="(auth)" />
           </Stack>
           <StatusBar style="auto" />
         </ThemeProvider>

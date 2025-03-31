@@ -1,4 +1,4 @@
-import { Image, Platform } from "react-native";
+import {  Platform } from "react-native";
 import React from "react";
 import { Text, YStack, Button, H1, XStack, ScrollView } from "tamagui";
 import * as Device from "expo-device";

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ScrollView, ImageBackground } from 'react-native';
 import { Text, YStack, Input, Button, H1, Card, Spinner, XStack } from 'tamagui';
 import { useRouter } from 'expo-router';
-import { Mail, Lock, User, ArrowRight } from 'lucide-react-native';
+import { Mail, Lock, User, ArrowRight } from '@tamagui/lucide-icons';
 
 export default function SignupScreen() {
   const [name, setName] = useState('');

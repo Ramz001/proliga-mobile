@@ -11,7 +11,7 @@ import {
   XStack,
 } from "tamagui";
 import { useRouter } from "expo-router";
-import { Mail, Lock, User, ArrowRight } from "lucide-react-native";
+import { Mail, Lock, User, ArrowRight } from "@tamagui/lucide-icons";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");

@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { ScrollView, ImageBackground, Dimensions } from 'react-native';
 import { Text, YStack, Button, H1, XStack, Card } from 'tamagui';
 import { useRouter } from 'expo-router';
-import { ArrowRight } from 'lucide-react-native';
+import { ArrowRight } from '@tamagui/lucide-icons';
 
 const { width } = Dimensions.get('window');
 

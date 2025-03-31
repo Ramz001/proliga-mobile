@@ -2,7 +2,7 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
 import { YStack } from 'tamagui';
-import { Home, ArrowLeftRight, BarChart3 } from 'lucide-react-native';
+import { Home, ArrowLeftRight, BarChart3 } from '@tamagui/lucide-icons';
 import { colors } from '@/constants/colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -28,7 +28,7 @@ export default function TabLayout() {
           title: 'Home',
           tabBarIcon: ({ color }) => (
             <YStack>
-              <Home size={24} color={color} />
+              <Home size={24} color={color as any} />
             </YStack>
           ),
         }}
@@ -39,7 +39,7 @@ export default function TabLayout() {
           title: 'Transfers',
           tabBarIcon: ({ color }) => (
             <YStack>
-              <ArrowLeftRight size={24} color={color} />
+              <ArrowLeftRight size={24} color={color as any} />
             </YStack>
           ),
         }}
@@ -50,7 +50,7 @@ export default function TabLayout() {
           title: 'Stats',
           tabBarIcon: ({ color }) => (
             <YStack>
-              <BarChart3 size={24} color={color} />
+              <BarChart3 size={24} color={color as any} />
             </YStack>
           ),
         }}
