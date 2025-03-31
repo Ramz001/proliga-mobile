@@ -4,17 +4,17 @@ const config = createTamagui({
   // act like CSS variables at your root
   tokens: {
     // width="$sm"
-    size: { 
-      xs: 4,
-      sm: 8, 
-      md: 12, 
-      lg: 20,
-      xl: 24,
-      '2xl': 32,
-      '3xl': 40,
-      '4xl': 48,
-      '5xl': 56,
-      '6xl': 64,
+    size: {
+      0: 4,
+      1: 8,
+      2: 12,
+      3: 20,
+      4: 24,
+      5: 32,
+      6: 40,
+      7: 48,
+      8: 56,
+      9: 64,
     },
     // margin="$-sm"
     space: { 
@@ -92,6 +92,8 @@ const config = createTamagui({
       '2xl': 24,
       '3xl': 30,
       '4xl': 36,
+      '5xl': 48,
+      '6xl': 64,
     },
   },
 
